@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/marble"
+    android:orientation="vertical"
+    tools:context=".encuesta">
+
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="COVID-19 PY"
+        android:textColor="@android:color/background_dark"
+        android:textSize="14sp"  />
+
+    <TextView
+        android:id="@+id/t_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Indique su temperatura corporal"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/editText7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:textSize="18sp"  />
+
+
+    <TextView
+        android:id="@+id/t_3"
+        android:layout_width="422dp"
+        android:layout_height="wrap_content"
+        android:text="¿Presenta usted o algún familiar tos o dolor de garganta?"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp" />
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal">
+
+       <RadioButton
+           android:id="@+id/dg_si"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="SI "
+           android:textColor="@android:color/holo_blue_dark" />
+
+       <RadioButton
+           android:id="@+id/dg_no"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="NO "
+           android:textColor="@android:color/holo_red_dark" />
+   </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/t_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Tiene usted o algun familiar suyo dificultades respiratorias?"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp"  />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/dg_si1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SI "
+            android:textColor="@android:color/holo_blue_dark" />
+
+        <RadioButton
+            android:id="@+id/dg_no1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NO "
+            android:textColor="@android:color/holo_red_dark" />
+    </LinearLayout>
+
+
+    // EDAD
+    <TextView
+        android:id="@+id/t_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Es usted una persona mayor de 50 años?"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp"  />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/dg_si1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SI "
+            android:textColor="@android:color/holo_blue_dark" />
+        <RadioButton
+            android:id="@+id/dg_no1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NO " />
+    </LinearLayout>
+    // FIN EDAD
+
+    // DIABETES
+    <TextView
+        android:id="@+id/t_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Sufre de diabetes?"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp"  />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/dg_si1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SI "
+            android:textColor="@android:color/holo_blue_dark" />
+
+        <RadioButton
+            android:id="@+id/dg_no1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NO "
+            android:textColor="@android:color/holo_red_dark" />
+    </LinearLayout>
+    // FIN DIABETES
+
+
+    // ASMA
+    <TextView
+        android:id="@+id/t_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Sufre de asma o alguna otra enfermedad respiratoria?"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp"  />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/dg_si1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SI "
+            android:textColor="@android:color/holo_blue_dark" />
+
+        <RadioButton
+            android:id="@+id/dg_no1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NO "
+            android:textColor="@android:color/holo_red_dark" />
+    </LinearLayout>
+    // FIN ASMA
+
+    // RIÑON
+    <TextView
+        android:id="@+id/t_8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Padece de alguna enfermedad del riñon?"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp"  />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/dg_si1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SI "
+            android:textColor="@android:color/holo_blue_dark" />
+
+        <RadioButton
+            android:id="@+id/dg_no1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NO "
+            android:textColor="@android:color/holo_red_dark" />
+    </LinearLayout>
+    // FIN RENAL
+
+
+    // CARDIACO
+    <TextView
+        android:id="@+id/t_9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Padece de algun problema cardiaco?"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp"  />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/dg_si1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SI "
+            android:textColor="@android:color/holo_blue_dark" />
+
+        <RadioButton
+            android:id="@+id/dg_no1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NO "
+            android:textColor="@android:color/holo_red_dark" />
+    </LinearLayout>
+    // FIN CARDIACO
+
+
+    // ALQUILER O CASA PROPIA
+    <TextView
+        android:id="@+id/t_9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Vive en alquiler o casa propia?"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp"  />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/dg_si1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ALQUILER"
+            android:textColor="@android:color/holo_blue_dark" />
+
+        <RadioButton
+            android:id="@+id/dg_no1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CUENTO CON CASA PROPIA"
+            android:textColor="@android:color/holo_red_dark" />
+    </LinearLayout>
+    // FIN CASA
+
+    //otros
+
+    <TextView
+        android:id="@+id/t_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="OTROS INDICADORES DE SALUD"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="18sp" />
+
+    // fin otros
+
+    <TextView
+        android:id="@+id/t_11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Si usted padece de otra alergia u otros sintomas no mencionado favor complete aqui:"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp"  />
+
+     //llenado
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@drawable/edt_style"
+        android:drawablePadding="15dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="" />
+    //fin llenado
+
+
+    // EL layout FINAL
+</LinearLayout>
+

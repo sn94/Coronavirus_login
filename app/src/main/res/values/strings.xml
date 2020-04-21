@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Coronavirus_login</string>
+    <string name="user">USUARIO</string>
+    <string name="CONTRASEÑA">contraseña</string>
+    <string name="password">CONTRASEÑA</string>
+    <string name="registrar">REGISTRARSE</string>
+    <string name="title_activity_geo">Map</string>
+    <string name="usuario">USUARIO</string>
+</resources>

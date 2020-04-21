@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/marble"
+    android:orientation="vertical"
+    tools:context=".registro">
+<TextView
+    android:id="@+id/textView3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="INGRESE SUS DATOS"
+    android:layout_gravity="center"
+    android:textColor="@android:color/background_dark"
+    android:textSize="24sp"  />
+
+
+
+    <TextView
+        android:id="@+id/t_101"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CÉDULA DE IDENTIDAD"
+        android:layout_gravity="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp" />
+
+
+    <EditText
+        android:id="@+id/CI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint=""
+        android:layout_gravity="center"
+        android:inputType="number"
+        android:textColorHint="@android:color/background_dark" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NOMBRES"
+        android:layout_gravity="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp" />
+
+
+    <EditText
+        android:id="@+id/NOMBRES"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:layout_gravity="center"
+        android:textSize="18sp"  />
+
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="APELLIDOS"
+        android:layout_gravity="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp" />
+
+
+    <EditText
+        android:id="@+id/APELLIDOS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_gravity="center"
+        android:inputType="textPersonName"
+        android:text=""  />
+
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NÚMERO DE TÉLEFONO"
+        android:layout_gravity="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp" />
+
+
+    <EditText
+        android:id="@+id/TELEF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_gravity="center"
+        android:hint=""
+        android:inputType="phone"
+        android:textColorHint="@android:color/background_dark"  />
+
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NÚMERO DE CREDENCIAL POLICIAL"
+        android:layout_gravity="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp" />
+
+
+    <EditText
+        android:id="@+id/CREDPOLI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_gravity="center"
+        android:hint=""
+        android:inputType="phone"
+        android:textColorHint="@android:color/background_dark"  />
+
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="USUARIO"
+        android:layout_gravity="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp" />
+
+
+    <EditText
+        android:id="@+id/NICK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_gravity="center"
+        android:hint=""
+        android:inputType="phone"
+        android:textColorHint="@android:color/background_dark"  />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CONTRASEÑA"
+        android:layout_gravity="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp" />
+
+
+    <EditText
+        android:id="@+id/PASSW"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_gravity="center"
+        android:hint="DIGITE SU CONTRASEÑA"
+        android:inputType="numberPassword"
+        android:textColorHint="@android:color/holo_red_dark"  />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOCALIDAD"
+        android:layout_gravity="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp" />
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Favor complete el sgte campo con su ciudad, barrio y nro de residencia:"
+        android:layout_gravity="left"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp" />
+
+
+
+    <EditText
+        android:id="@+id/LOCALIDAD"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/edt_style"
+        android:drawablePadding="15dp"
+        android:ems="11"
+        android:inputType="textPersonName"
+        android:text="" />
+
+
+
+
+    <TextView
+        android:id="@+id/t_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UBICACIÓN"
+        android:layout_gravity="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp" />
+
+
+    <Button
+        android:id="@+id/btnUbicacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:drawableLeft="@drawable/map"
+        android:text="   SU UBICACIÓN POR FAVOR"
+        android:onClick="MostrarMapa"/>
+
+    <Button
+        android:id="@+id/btnLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:drawableLeft="@drawable/register"
+        android:text="  REGISTRAR DATOS" />
+
+
+
+</LinearLayout>
