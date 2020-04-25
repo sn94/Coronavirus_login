@@ -8,20 +8,22 @@
     android:background="@drawable/marble"
     tools:context=".MainActivity">
 
+    //llenado
+
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="242dp"
-        android:layout_height="308dp"
-        android:layout_marginLeft="75dp"
-        app:srcCompat="@drawable/logotipo"
-         />
-
-    //llenado
+        android:layout_width="202dp"
+        android:layout_height="289dp"
+        android:layout_gravity="center"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@drawable/logotipo" />
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="match_parent"
+        android:layout_width="268dp"
         android:layout_height="64dp"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
         android:background="@drawable/edt_style"
         android:drawableLeft="@drawable/user"
         android:drawablePadding="15dp"
@@ -32,10 +34,10 @@
 
     <EditText
         android:id="@+id/editText2"
-        android:layout_width="match_parent"
+        android:layout_width="268dp"
         android:layout_height="64dp"
         android:layout_gravity="center"
-        android:layout_margin="50dp"
+        android:layout_margin="20dp"
         android:background="@drawable/edt_style"
         android:drawableLeft="@drawable/pass"
         android:drawablePadding="15dp"
@@ -47,10 +49,10 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="50dp"
+        android:layout_margin="10dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="15dp"
-        android:layout_weight="50"
+        android:layout_weight="20"
         android:onClick="acceder"
         android:text="ACCEDER" />
 

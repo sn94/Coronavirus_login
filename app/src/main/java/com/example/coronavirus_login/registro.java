@@ -204,7 +204,7 @@ public class registro extends AppCompatActivity {
 
 
 
-    public void createUser() {
+    public void createUser( View v) {
         WEBAPI consumidor = new Principal().buildService(WEBAPI.class);
         //RECOGEMOS LOS DATOS DEL FORMULARIO
         String cedula = ((EditText) findViewById(R.id.CI)).getText().toString();
@@ -213,7 +213,8 @@ public class registro extends AppCompatActivity {
         String telef = ((EditText) findViewById(R.id.TELEF)).getText().toString();
         String credpol = ((EditText) findViewById(R.id.CREDPOLI)).getText().toString();
         String nick = ((EditText) findViewById(R.id.NICK)).getText().toString();
-        String clave = ((EditText) findViewById(R.id.PASSW)).getText().toString();
+        String clave = ((EditText) findViewById(R.id.PASSW)).getText() .toString();
+        String domici= ((EditText) findViewById(R.id.LOCALIDAD)).getText().toString();
         //USAR LATITUD Y LONGITUD   convertimos a string
         String lati = String.valueOf(LATITUD);
         String longi = String.valueOf(LONGITUD);
@@ -225,6 +226,7 @@ public class registro extends AppCompatActivity {
         personaX.setNombre(nom);
         personaX.setApellido(ape);
         personaX.setTelefono(telef);
+        personaX.setDetalle_domicilio(domici);
         personaX.setCredencial(credpol);
         personaX.setNick(nick);
         personaX.setClave(clave);
@@ -247,6 +249,7 @@ public class registro extends AppCompatActivity {
             public void onFailure(Call<Respuesta> call, Throwable t) {
             //esto corre cuando hay fallas
                 Log.i("TEST en caso de ERROR ",  t.getMessage());
+                t.printStackTrace();
 
             }
         });

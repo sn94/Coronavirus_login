@@ -6,7 +6,8 @@ public class Persona {
     //esta clase Persona representa a tu tabla, pero a nivel programatico
 
     //equivalente a los campos de la tabla de persona
-    String cedula, nombre,apellido,  telefono, credencial, latitud, longitud, nick, clave, detalle_domicilio="";
+    String cedula="", nombre,apellido="",  telefono="", credencial="",
+            latitud="", longitud="", nick="",clave="", detalle_domicilio="";
 
 
 
