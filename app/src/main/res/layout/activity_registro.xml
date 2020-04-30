@@ -215,6 +215,16 @@
             android:text="   SU UBICACIÓN POR FAVOR"
             android:onClick="MostrarMapa"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/latitud_text"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/longitud_text"
+            />
         <Button
             android:id="@+id/btnLocation"
             android:layout_width="wrap_content"

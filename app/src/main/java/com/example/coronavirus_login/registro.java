@@ -49,7 +49,7 @@ public class registro extends AppCompatActivity {
     int PERMISSION_ID = 44;//PUEDE SER CUALQUIER VALOR
     double LATITUD=0.0, LONGITUD= 0.0;
 
-
+    TextView txt_lat, txt_long;
 
 
     @Override
@@ -57,7 +57,8 @@ public class registro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);//MODIFICADO, EL NOMBRE DEL LAYOUT PARA REGISTRO NO PARA LOGUEARSE!
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
+    txt_lat= (TextView ) findViewById( R.id.latitud_text) ;
+        txt_long= (TextView ) findViewById( R.id.longitud_text) ;
         //me falto inicializar
         mFusedLocationClient= LocationServices.getFusedLocationProviderClient( this);
     }
@@ -134,6 +135,10 @@ public class registro extends AppCompatActivity {
                 //AQUIII
                 LATITUD= mLastLocation.getLatitude();
                 LONGITUD= mLastLocation.getLongitude();
+                //aqui seria bueno mostrar la latitud y longitud tomada en un label
+                txt_lat.setText( String.valueOf( LATITUD ));
+                txt_long.setText( String.valueOf( LONGITUD ));
+                //*************/
                 Log.i( "LAT",mLastLocation.getLatitude()+"");
                 Log.i( "Long",mLastLocation.getLongitude()+"");
                 CallMapActivity();  //ACA SE LLAMA A ACTIVITY_GOE
@@ -242,13 +247,16 @@ public class registro extends AppCompatActivity {
             @Override
             public void onResponse(Call<Respuesta> call, Response<Respuesta> response) {
                 //esto se ejecuta cuando la operacion tuvo exito
-                Log.i("TEST EXITO ", response.body().getMensaje() );
+    Toast.makeText( getApplicationContext(), response.body().getMensaje(), Toast.LENGTH_LONG ).show();
+              //  Log.i("TEST EXITO ", response.body().getMensaje() );
             }
 
             @Override
             public void onFailure(Call<Respuesta> call, Throwable t) {
             //esto corre cuando hay fallas
-                Log.i("TEST en caso de ERROR ",  t.getMessage());
+                Toast.makeText( getApplicationContext(), "ERROR", Toast.LENGTH_LONG ).show();
+              //  Log.i("TEST en caso de ERROR ",  t.getMessage());
+
                 t.printStackTrace();
 
             }
