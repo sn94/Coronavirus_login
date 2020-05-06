@@ -13,4 +13,11 @@ public interface WEBAPI {
     @POST("covid_webservice/persona.php")
     Call<Respuesta> signup(@Body Persona datos);
 
+    @POST("covid_webservice/signin.php")
+    Call<Respuesta> signin(@Body Usuario datos);
+
+
+    @POST("covid_webservice/diagnostico.php")
+    Call<Respuesta> sintomas(@Body Diagnostico datos);
+
 }

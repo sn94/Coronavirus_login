@@ -26,7 +26,7 @@
         android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/temperatura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -43,25 +43,25 @@
         android:textColor="@android:color/background_dark"
         android:textSize="18sp" />
 
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:orientation="horizontal">
 
-       <RadioButton
-           android:id="@+id/dg_si"
-           android:layout_width="wrap_content"
+       <RadioGroup
+           android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:text="SI "
-           android:textColor="@android:color/holo_blue_dark" />
+           android:orientation="horizontal">
+           <RadioButton
+               android:id="@+id/dg_si"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="SI "
+               android:textColor="@android:color/holo_blue_dark" />
 
-       <RadioButton
-           android:id="@+id/dg_no"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="NO "
-           android:textColor="@android:color/holo_red_dark" />
-   </LinearLayout>
+           <RadioButton
+               android:id="@+id/dg_no"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="NO "
+               android:textColor="@android:color/holo_red_dark" />
+       </RadioGroup>
 
 
     <TextView
@@ -71,28 +71,28 @@
         android:text="¿Tiene usted o algun familiar suyo dificultades respiratorias?"
         android:textColor="@android:color/background_dark"
         android:textSize="18sp"  />
-    <LinearLayout
+    <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/dg_si1"
+            android:id="@+id/dr_si"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="SI "
             android:textColor="@android:color/holo_blue_dark" />
 
         <RadioButton
-            android:id="@+id/dg_no1"
+            android:id="@+id/dr_no"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="NO "
             android:textColor="@android:color/holo_red_dark" />
-    </LinearLayout>
+    </RadioGroup>
 
 
-    // EDAD
+
     <TextView
         android:id="@+id/t_5"
         android:layout_width="wrap_content"
@@ -100,26 +100,24 @@
         android:text="¿Es usted una persona mayor de 50 años?"
         android:textColor="@android:color/background_dark"
         android:textSize="18sp"  />
-    <LinearLayout
+    <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/dg_si1"
+            android:id="@+id/m50_si"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="SI "
             android:textColor="@android:color/holo_blue_dark" />
         <RadioButton
-            android:id="@+id/dg_no1"
+            android:id="@+id/m50_no"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="NO " />
-    </LinearLayout>
-    // FIN EDAD
+    </RadioGroup>
 
-    // DIABETES
     <TextView
         android:id="@+id/t_6"
         android:layout_width="wrap_content"
@@ -127,29 +125,26 @@
         android:text="¿Sufre de diabetes?"
         android:textColor="@android:color/background_dark"
         android:textSize="18sp"  />
-    <LinearLayout
+    <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/dg_si1"
+            android:id="@+id/diab_si"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="SI "
             android:textColor="@android:color/holo_blue_dark" />
 
         <RadioButton
-            android:id="@+id/dg_no1"
+            android:id="@+id/diab_no"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="NO "
             android:textColor="@android:color/holo_red_dark" />
-    </LinearLayout>
-    // FIN DIABETES
+    </RadioGroup>
 
-
-    // ASMA
     <TextView
         android:id="@+id/t_7"
         android:layout_width="wrap_content"
@@ -157,28 +152,26 @@
         android:text="¿Sufre de asma o alguna otra enfermedad respiratoria?"
         android:textColor="@android:color/background_dark"
         android:textSize="18sp"  />
-    <LinearLayout
+    <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/dg_si1"
+            android:id="@+id/asma_si"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="SI "
             android:textColor="@android:color/holo_blue_dark" />
 
         <RadioButton
-            android:id="@+id/dg_no1"
+            android:id="@+id/asma_no"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="NO "
             android:textColor="@android:color/holo_red_dark" />
-    </LinearLayout>
-    // FIN ASMA
+    </RadioGroup>
 
-    // RIÑON
     <TextView
         android:id="@+id/t_8"
         android:layout_width="wrap_content"
@@ -186,91 +179,80 @@
         android:text="¿Padece de alguna enfermedad del riñon?"
         android:textColor="@android:color/background_dark"
         android:textSize="18sp"  />
-    <LinearLayout
+    <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/dg_si1"
+            android:id="@+id/rinon_si"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="SI "
             android:textColor="@android:color/holo_blue_dark" />
 
         <RadioButton
-            android:id="@+id/dg_no1"
+            android:id="@+id/rinon_no"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="NO "
             android:textColor="@android:color/holo_red_dark" />
-    </LinearLayout>
-    // FIN RENAL
+    </RadioGroup>
 
-
-    // CARDIACO
     <TextView
-        android:id="@+id/t_9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="¿Padece de algun problema cardiaco?"
         android:textColor="@android:color/background_dark"
         android:textSize="18sp"  />
-    <LinearLayout
+    <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/dg_si1"
+            android:id="@+id/card_si"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="SI "
             android:textColor="@android:color/holo_blue_dark" />
 
         <RadioButton
-            android:id="@+id/dg_no1"
+            android:id="@+id/card_no"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="NO "
             android:textColor="@android:color/holo_red_dark" />
-    </LinearLayout>
-    // FIN CARDIACO
+    </RadioGroup>
 
-
-    // ALQUILER O CASA PROPIA
     <TextView
-        android:id="@+id/t_9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="¿Vive en alquiler o casa propia?"
         android:textColor="@android:color/background_dark"
         android:textSize="18sp"  />
-    <LinearLayout
+    <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/dg_si1"
+            android:id="@+id/alquiler"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ALQUILER"
             android:textColor="@android:color/holo_blue_dark" />
 
         <RadioButton
-            android:id="@+id/dg_no1"
+            android:id="@+id/propia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="CUENTO CON CASA PROPIA"
             android:textColor="@android:color/holo_red_dark" />
-    </LinearLayout>
-    // FIN CASA
+    </RadioGroup>
 
-    //otros
 
     <TextView
-        android:id="@+id/t_10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -278,20 +260,19 @@
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textSize="18sp" />
 
-    // fin otros
+
 
     <TextView
-        android:id="@+id/t_11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Si usted padece de otra alergia u otros sintomas no mencionado favor complete aqui:"
         android:textColor="@android:color/background_dark"
         android:textSize="18sp"  />
 
-     //llenado
+
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/otros_sinto"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:background="@drawable/edt_style"
@@ -299,9 +280,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="" />
-    //fin llenado
 
 
-    // EL layout FINAL
+
 </LinearLayout>
 

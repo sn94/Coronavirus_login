@@ -140,7 +140,6 @@
             android:ems="10"
             android:layout_gravity="center"
             android:hint=""
-            android:inputType="phone"
             android:textColorHint="@android:color/background_dark"  />
 
         <TextView
