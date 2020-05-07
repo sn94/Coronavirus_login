@@ -8,7 +8,7 @@
     android:background="@drawable/marble"
     tools:context=".MainActivity">
 
-    //llenado
+
 
     <ImageView
         android:id="@+id/imageView3"
@@ -30,7 +30,7 @@
         android:inputType="textPersonName"
         android:text="@string/usuario"
         android:textColor="@color/place_autocomplete_prediction_primary_text_highlight" />
-    //fin llenado
+
 
     <EditText
         android:id="@+id/editText2"
@@ -62,6 +62,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/registrar"
+        android:onClick="acceder"
         android:layout_marginLeft="162dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="#003B57"

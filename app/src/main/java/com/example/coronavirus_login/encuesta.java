@@ -32,6 +32,7 @@ public class encuesta extends AppCompatActivity {
     void registrarDiagnostico(){
         Diagnostico diag= new Diagnostico();
         //datos
+        String user=  MainActivity.CURRENT_ID_USER;
         String temperatura= ((EditText) findViewById( R.id.temperatura)).getText().toString();
         String tos= ((RadioButton) findViewById( R.id.dg_si)).isChecked() ? "si": "no";
         String dif_Resp=  ((RadioButton) findViewById( R.id.dr_si)).isChecked() ? "si": "no";
@@ -48,6 +49,7 @@ public class encuesta extends AppCompatActivity {
         diag.setCardiaco( cardiaco);
         diag.setCasa( casa);
         diag.setRinon( rinon);
+        diag.setId_persona(  user );
 
         WEBAPI consumidor = new Principal().buildService(WEBAPI.class);
         Call<Respuesta> respuesta= consumidor.sintomas(    diag  );
