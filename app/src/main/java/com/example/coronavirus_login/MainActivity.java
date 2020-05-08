@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -54,6 +56,11 @@ public class MainActivity extends AppCompatActivity {
     }
     public void acceder(View v){
         Usuario usu= new Usuario();
+        String nick= ((EditText) findViewById(R.id.APELLIDOS)).getText().toString();
+        String pass= ((EditText) findViewById(R.id.APELLIDOS)).getText().toString();
+
+        usu.setUsuario( nick);  usu.setClave(  pass);
+
         WEBAPI consumidor = new Principal().buildService(WEBAPI.class);
         Call<RespuestaLogin> respuesta= consumidor.signin(    usu  );
         respuesta.enqueue(new Callback<RespuestaLogin>() {
@@ -70,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<RespuestaLogin> call, Throwable t) {
-
+                Log.i("TEST en caso de ERROR ",  t.getMessage());
             }
         });
 
