@@ -56,11 +56,11 @@ public class MainActivity extends AppCompatActivity {
     }
     public void acceder(View v){
         Usuario usu= new Usuario();
-        String nick= ((EditText) findViewById(R.id.APELLIDOS)).getText().toString();
-        String pass= ((EditText) findViewById(R.id.APELLIDOS)).getText().toString();
+        String nick= ((EditText) findViewById(R.id.LOGIN_USER)).getText().toString();
+        String pass= ((EditText) findViewById(R.id.LOGIN_PASS)).getText().toString();
 
         usu.setUsuario( nick);  usu.setClave(  pass);
-
+Log.i("usu", nick+" "+pass);
         WEBAPI consumidor = new Principal().buildService(WEBAPI.class);
         Call<RespuestaLogin> respuesta= consumidor.signin(    usu  );
         respuesta.enqueue(new Callback<RespuestaLogin>() {

@@ -19,7 +19,7 @@
         app:srcCompat="@drawable/logotipo" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/LOGIN_USER"
         android:layout_width="268dp"
         android:layout_height="64dp"
         android:layout_gravity="center"
@@ -28,12 +28,12 @@
         android:drawableLeft="@drawable/user"
         android:drawablePadding="15dp"
         android:inputType="textPersonName"
-        android:text="@string/usuario"
+        android:hint="@string/usuario"
         android:textColor="@color/place_autocomplete_prediction_primary_text_highlight" />
 
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/LOGIN_PASS"
         android:layout_width="268dp"
         android:layout_height="64dp"
         android:layout_gravity="center"

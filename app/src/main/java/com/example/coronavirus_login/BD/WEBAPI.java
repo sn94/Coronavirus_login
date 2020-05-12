@@ -13,7 +13,7 @@ public interface WEBAPI {
     @POST("covid_webservice/persona.php")
     Call<Respuesta> signup(@Body Persona datos);
 
-    @POST("covid_webservice/signin.php")
+    @POST("covid_webservice/sign_in.php")
     Call<RespuestaLogin> signin(@Body Usuario datos);
 
 
