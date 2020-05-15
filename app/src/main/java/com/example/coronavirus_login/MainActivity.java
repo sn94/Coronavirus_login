@@ -66,13 +66,19 @@ Log.i("usu", nick+" "+pass);
         respuesta.enqueue(new Callback<RespuestaLogin>() {
             @Override
             public void onResponse(Call<RespuestaLogin> call, Response<RespuestaLogin> response) {
-                if( response.body().getCodigo().equals("ok")){
-                    //DATO USUARIO
-                    CURRENT_ID_USER=  response.body().getUsuario();
-                    irEncuesta();
-                }else{
+
+
+                    //usuario no   clave no es correcta
+                if(  response.body().getCodigo().equals("No existe") ||  response.body().getCodigo().equals("error"))
                     Toast.makeText( getApplicationContext(),  response.body().getMensaje() , Toast.LENGTH_LONG).show();
-                }
+
+                if(  response.body().getCodigo().equals("ok")){  //todo bien
+                        //DATO USUARIO
+                        CURRENT_ID_USER=  response.body().getUsuario();
+                        irEncuesta();
+                    }
+
+
             }
 
             @Override

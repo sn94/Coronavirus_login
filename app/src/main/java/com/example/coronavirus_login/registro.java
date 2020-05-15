@@ -56,7 +56,7 @@ public class registro extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);//MODIFICADO, EL NOMBRE DEL LAYOUT PARA REGISTRO NO PARA LOGUEARSE!
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
     txt_lat= (TextView ) findViewById( R.id.latitud_text) ;
         txt_long= (TextView ) findViewById( R.id.longitud_text) ;
         //me falto inicializar
@@ -206,6 +206,13 @@ public class registro extends AppCompatActivity {
 
 
 
+    void mostrarFormLogin(){
+
+        finish();
+        Intent i = new Intent(registro.this,  MainActivity.class);
+        startActivity(i);
+    }
+
 
 
 
@@ -247,7 +254,9 @@ public class registro extends AppCompatActivity {
             @Override
             public void onResponse(Call<Respuesta> call, Response<Respuesta> response) {
                 //esto se ejecuta cuando la operacion tuvo exito
-    Toast.makeText( getApplicationContext(), response.body().getMensaje(), Toast.LENGTH_LONG ).show();
+                Toast.makeText( getApplicationContext(), response.body().getMensaje(), Toast.LENGTH_LONG ).show();
+                mostrarFormLogin();
+
               //  Log.i("TEST EXITO ", response.body().getMensaje() );
             }
 
