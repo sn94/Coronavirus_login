@@ -52,15 +52,28 @@ public class registro extends AppCompatActivity {
     TextView txt_lat, txt_long;
 
 
+    //campos
+    EditText cedula_edit,nom_edit,ape_edit , telef_edit, credpol_edit, nick_edit, clave_edit,domici_edit= null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);//MODIFICADO, EL NOMBRE DEL LAYOUT PARA REGISTRO NO PARA LOGUEARSE!
 
-    txt_lat= (TextView ) findViewById( R.id.latitud_text) ;
+        txt_lat= (TextView ) findViewById( R.id.latitud_text) ;
         txt_long= (TextView ) findViewById( R.id.longitud_text) ;
         //me falto inicializar
         mFusedLocationClient= LocationServices.getFusedLocationProviderClient( this);
+
+        //CAMPOS
+        cedula_edit = (EditText) findViewById(R.id.CI);
+        nom_edit = (EditText) findViewById(R.id.NOMBRES);
+        ape_edit = (EditText) findViewById(R.id.APELLIDOS);
+        telef_edit = (EditText) findViewById(R.id.TELEF);
+        credpol_edit = (EditText) findViewById(R.id.CREDPOLI);
+        nick_edit= (EditText) findViewById(R.id.NICK);
+        clave_edit = (EditText) findViewById(R.id.PASSW);
+        domici_edit= (EditText) findViewById(R.id.LOCALIDAD);
     }
 
 
@@ -215,61 +228,95 @@ public class registro extends AppCompatActivity {
 
 
 
+boolean camposLlenos(){
+        boolean c1= cedula_edit.getText().toString().length() >0;
+        boolean c2= ape_edit.getText().toString().length() >0;
+        boolean c3= telef_edit.getText().toString().length() >0;
+        boolean c4= credpol_edit.getText().toString().length() >0;
+        boolean c5= nick_edit.getText().toString().length() >0;
+        boolean c6= clave_edit.getText().toString().length() >0;
+        boolean c7= domici_edit.getText().toString().length() >0;
+        boolean c8= LATITUD > 0.0;
+        boolean c9= LONGITUD > 0.0;
+        if( !c1)
+            Toast.makeText( getApplicationContext(), "Ingrese su numero de CI", Toast.LENGTH_LONG ).show();
+    if( !c2)
+        Toast.makeText( getApplicationContext(), "Ingrese su nombre", Toast.LENGTH_LONG ).show();
+    if( !c3)
+        Toast.makeText( getApplicationContext(), "Ingrese su apellido", Toast.LENGTH_LONG ).show();
+    if( !c3)
+        Toast.makeText( getApplicationContext(), "Ingrese su numero de telefono", Toast.LENGTH_LONG ).show();
+    if( !c4)
+        Toast.makeText( getApplicationContext(), "Ingrese su numero de credencial policial", Toast.LENGTH_LONG ).show();
+    if( !c5)
+        Toast.makeText( getApplicationContext(), "Ingrese su nombre de usuario", Toast.LENGTH_LONG ).show();
+    if( !c6)
+        Toast.makeText( getApplicationContext(), "Ingrese una clave", Toast.LENGTH_LONG ).show();
+    if( !c7)
+        Toast.makeText( getApplicationContext(), "Ingrese su Domicilio", Toast.LENGTH_LONG ).show();
+    if( !c8   &&  !c9 )
+        Toast.makeText( getApplicationContext(), "Proporcione su ubicacion", Toast.LENGTH_LONG ).show();
 
+    return (  c1 &&  c2 && c3 && c4 && c5 &&  c6 && c7 && c8 && c9 ) ;
+
+}
     public void createUser( View v) {
-        WEBAPI consumidor = new Principal().buildService(WEBAPI.class);
-        //RECOGEMOS LOS DATOS DEL FORMULARIO
-        String cedula = ((EditText) findViewById(R.id.CI)).getText().toString();
-        String nom = ((EditText) findViewById(R.id.NOMBRES)).getText().toString();
-        String ape = ((EditText) findViewById(R.id.APELLIDOS)).getText().toString();
-        String telef = ((EditText) findViewById(R.id.TELEF)).getText().toString();
-        String credpol = ((EditText) findViewById(R.id.CREDPOLI)).getText().toString();
-        String nick = ((EditText) findViewById(R.id.NICK)).getText().toString();
-        String clave = ((EditText) findViewById(R.id.PASSW)).getText() .toString();
-        String domici= ((EditText) findViewById(R.id.LOCALIDAD)).getText().toString();
-        //USAR LATITUD Y LONGITUD   convertimos a string
-        String lati = String.valueOf(LATITUD);
-        String longi = String.valueOf(LONGITUD);
 
-        //CREAMOS UN OBJETO DE TIPO PERSONA
-        Persona personaX = new Persona();//este objeto ya esta preparado para llenarse mas facilmente con los datos
-        //solo basta llamar a los metodos
-        personaX.setCedula(cedula);
-        personaX.setNombre(nom);
-        personaX.setApellido(ape);
-        personaX.setTelefono(telef);
-        personaX.setDetalle_domicilio(domici);
-        personaX.setCredencial(credpol);
-        personaX.setNick(nick);
-        personaX.setClave(clave);
-        personaX.setLatitud( lati);
-        personaX.setLongitud( longi);
+        if( camposLlenos()){
+            WEBAPI consumidor = new Principal().buildService(WEBAPI.class);
+            //RECOGEMOS LOS DATOS DEL FORMULARIO
+            String cedula = cedula_edit.getText().toString();
+            String nom = nom_edit.getText().toString();
+            String ape = ape_edit.getText().toString();
+            String telef = telef_edit.getText().toString();
+            String credpol =credpol_edit.getText().toString();
+            String nick =nick_edit.getText().toString();
+            String clave = clave_edit.getText() .toString();
+            String domici= domici_edit.getText().toString();
+            //USAR LATITUD Y LONGITUD   convertimos a string
+            String lati = String.valueOf(LATITUD);
+            String longi = String.valueOf(LONGITUD);
+
+            //CREAMOS UN OBJETO DE TIPO PERSONA
+            Persona personaX = new Persona();//este objeto ya esta preparado para llenarse mas facilmente con los datos
+            //solo basta llamar a los metodos
+            personaX.setCedula(cedula);
+            personaX.setNombre(nom);
+            personaX.setApellido(ape);
+            personaX.setTelefono(telef);
+            personaX.setDetalle_domicilio(domici);
+            personaX.setCredencial(credpol);
+            personaX.setNick(nick);
+            personaX.setClave(clave);
+            personaX.setLatitud( lati);
+            personaX.setLongitud( longi);
 
 
-        //AHORA UTILIZAREMOS EL WEBSERVICE
-        //LLAMAREMOS AL METODO SIGN UP
-        //asignamos esto a una variable
-        Call<Respuesta> respuesta= consumidor.signup(    personaX  );//recibe los datos de persona
-        respuesta.enqueue(new Callback<Respuesta>() {
-            @Override
-            public void onResponse(Call<Respuesta> call, Response<Respuesta> response) {
-                //esto se ejecuta cuando la operacion tuvo exito
-                Toast.makeText( getApplicationContext(), response.body().getMensaje(), Toast.LENGTH_LONG ).show();
-                mostrarFormLogin();
+            //AHORA UTILIZAREMOS EL WEBSERVICE
+            //LLAMAREMOS AL METODO SIGN UP
+            //asignamos esto a una variable
+            Call<Respuesta> respuesta= consumidor.signup(    personaX  );//recibe los datos de persona
+            respuesta.enqueue(new Callback<Respuesta>() {
+                @Override
+                public void onResponse(Call<Respuesta> call, Response<Respuesta> response) {
+                    //esto se ejecuta cuando la operacion tuvo exito
+                    Toast.makeText( getApplicationContext(), response.body().getMensaje(), Toast.LENGTH_LONG ).show();
+                    mostrarFormLogin();
 
-              //  Log.i("TEST EXITO ", response.body().getMensaje() );
-            }
+                    //  Log.i("TEST EXITO ", response.body().getMensaje() );
+                }
 
-            @Override
-            public void onFailure(Call<Respuesta> call, Throwable t) {
-            //esto corre cuando hay fallas
-                Toast.makeText( getApplicationContext(), "ERROR", Toast.LENGTH_LONG ).show();
-              //  Log.i("TEST en caso de ERROR ",  t.getMessage());
+                @Override
+                public void onFailure(Call<Respuesta> call, Throwable t) {
+                    //esto corre cuando hay fallas
+                    Toast.makeText( getApplicationContext(), "ERROR", Toast.LENGTH_LONG ).show();
+                    //  Log.i("TEST en caso de ERROR ",  t.getMessage());
 
-                t.printStackTrace();
+                    t.printStackTrace();
 
-            }
-        });
+                }
+            });
+        }
 
     }/***   end create USER **/
 

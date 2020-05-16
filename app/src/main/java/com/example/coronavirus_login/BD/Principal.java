@@ -12,7 +12,8 @@ public class Principal {
 
     //HOST SERA LA IP DEL SERVIDOR QUE USAS AHORA, MAS BIEN EN ESTE CASO
     //YA QUE TRABAJAMOS LOCALMENTE  SERA LOCALHOST O 127.0.0.1
-    public static String host="192.168.100.11", puerto="80";//PUERTO 80 ES POR DEFECTO PARA CUALQUIER SOLICITUD DE RECURSO
+    public static String host="192.168.0.13";
+    public static String puerto="80";//PUERTO 80 ES POR DEFECTO PARA CUALQUIER SOLICITUD DE RECURSO
     //EN LA RED
 
     public static final String BASE_URL = "http://"+host+":"+puerto+"/";

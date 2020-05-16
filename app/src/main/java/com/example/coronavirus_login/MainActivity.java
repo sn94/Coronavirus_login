@@ -29,6 +29,10 @@ public class MainActivity extends AppCompatActivity {
 
     public  static  String CURRENT_ID_USER="";
 
+    //edit texts
+    EditText nick_Edit= null, pass_Edit= null;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +48,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        //campos
+        nick_Edit= (EditText) findViewById(R.id.LOGIN_USER);
+        pass_Edit= (EditText) findViewById(R.id.LOGIN_PASS);
+
     }
 
 
@@ -54,41 +62,63 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
 
     }
-    public void acceder(View v){
-        Usuario usu= new Usuario();
-        String nick= ((EditText) findViewById(R.id.LOGIN_USER)).getText().toString();
-        String pass= ((EditText) findViewById(R.id.LOGIN_PASS)).getText().toString();
 
-        usu.setUsuario( nick);  usu.setClave(  pass);
-Log.i("usu", nick+" "+pass);
-        WEBAPI consumidor = new Principal().buildService(WEBAPI.class);
-        Call<RespuestaLogin> respuesta= consumidor.signin(    usu  );
-        respuesta.enqueue(new Callback<RespuestaLogin>() {
-            @Override
-            public void onResponse(Call<RespuestaLogin> call, Response<RespuestaLogin> response) {
+
+   boolean camposLlenos(){
+
+        if( nick_Edit.getText().toString().length() == 0){
+            Toast.makeText( this,  "Ingrese el nick", Toast.LENGTH_LONG).show();
+            return false;
+        }else{
+            if( pass_Edit.getText().toString().length() == 0){
+                Toast.makeText( this,  "Ingrese su clave", Toast.LENGTH_LONG).show();
+                return false;
+            }else{
+                return true;
+            }
+        }
+    }
+    public void acceder(View v){
+        if( camposLlenos()){
+            Usuario usu= new Usuario();
+            String nick= nick_Edit.getText().toString();
+            String pass= pass_Edit.getText().toString();
+
+            usu.setUsuario( nick);  usu.setClave(  pass);
+            Log.i("usu", nick+" "+pass);
+            WEBAPI consumidor = new Principal().buildService(WEBAPI.class);
+            Call<RespuestaLogin> respuesta= consumidor.signin(    usu  );
+            respuesta.enqueue(new Callback<RespuestaLogin>() {
+                @Override
+                public void onResponse(Call<RespuestaLogin> call, Response<RespuestaLogin> response) {
 
 
                     //usuario no   clave no es correcta
-                if(  response.body().getCodigo().equals("No existe") ||  response.body().getCodigo().equals("error"))
-                    Toast.makeText( getApplicationContext(),  response.body().getMensaje() , Toast.LENGTH_LONG).show();
+                    if(  response.body().getCodigo().equals("No existe") ||  response.body().getCodigo().equals("error"))
+                        Toast.makeText( getApplicationContext(),  response.body().getMensaje() , Toast.LENGTH_LONG).show();
 
-                if(  response.body().getCodigo().equals("ok")){  //todo bien
+                    if(  response.body().getCodigo().equals("ok")){  //todo bien
                         //DATO USUARIO
                         CURRENT_ID_USER=  response.body().getUsuario();
                         irEncuesta();
                     }
 
 
-            }
+                }
 
-            @Override
-            public void onFailure(Call<RespuestaLogin> call, Throwable t) {
-                Log.i("TEST en caso de ERROR ",  t.getMessage());
-            }
-        });
+                @Override
+                public void onFailure(Call<RespuestaLogin> call, Throwable t) {
+                    Log.i("TEST en caso de ERROR ",  t.getMessage());
+                }
+            });
+        }
+
+    }//end function
 
 
-    }
+
+
+
 }
 
 
